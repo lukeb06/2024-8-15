@@ -12,7 +12,10 @@ console.log(arrayConverter(["apple", "banana", "potato", "banana"])); // => {app
 ***********************************************************************/
 
 function arrayConverter(array) {
-  // Your code here 
+    return array.reduce((acc, curr) => {
+        acc[curr] = acc[curr] ? acc[curr] + 1 : 1;
+        return acc;
+    }, {});
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
