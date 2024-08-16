@@ -28,8 +28,12 @@ console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 ***********************************************************************/
 
 function countScores(people) {
-  // Your code here 
+    return people.reduce((acc, curr) => {
+        acc[curr.name] = acc[curr.name]
+            ? acc[curr.name] + curr.score
+            : curr.score;
+        return acc;
+    }, {});
 }
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = countScores;
